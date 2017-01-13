@@ -6,12 +6,14 @@
         <div class="row">
             <div class="col-md-2">Filtered by:</div>
             <div class="col-md-4">
-                <input type="text" />
+                <!-- 2 way data binding i.e. setting the listFilter property in product-list.component.ts to the value of the input -->
+                <input type="text" [(ngModel)]="listFilter"/>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h3>Filtered by: </h3>
+                <!-- displaying the value of listFilter which is set by the input above via 2 way data banding -->
+                <h3>Filtered by: {{listFilter}}</h3>
             </div>
         </div>
         <div class="table-responsive">
@@ -19,7 +21,10 @@
                 <thead>
                     <tr>
                         <th>
-                            <button class="btn btn-primary">Show Image</button>
+                            <button class="btn btn-primary"
+                                    (click)="toggleImage()">
+                                    {{showImage ? 'Hide' : 'Show'}} Image
+                            </button>
                         </th>
                         <th>Product</th>
                         <th>Code</th>
@@ -30,11 +35,17 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let product of products">
-                        <td></td>
+                        <td>
+                            <img *ngIf="showImage"
+                                 [src]="product.imageUrl" 
+                                 [title]="product.productName"
+                                 [style.width.px]="imageWidth"
+                                 [style.margin.px]="imageMargin">
+                        </td>
                         <td>{{product.productName}}</td>
-                        <td>{{product.productCode}}</td>
+                        <td>{{product.productCode | lowercase}}</td>
                         <td>{{product.releaseDate}}</td>
-                        <td>{{product.price}}</td>
+                        <td>{{product.price | currency:'USD':true:'1.2-2'}}</td>
                         <td>{{product.starRating}}</td>
                     </tr>
                 </tbody>
