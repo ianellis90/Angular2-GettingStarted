@@ -1,0 +1,7 @@
+//contains list of libraries which need to be downlading by typings tool so can be used in tsc.
+{
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js#0.0.0+20160725163759", //brings ES2015 capabilities to es5 browsers.
+    "node": "registry:dt/node#6.0.0+20160831021119"
+  }
+}

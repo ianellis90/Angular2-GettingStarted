@@ -1,11 +1,16 @@
 /**
+* This systemJS config file configures SystemJS. 
+* SystemJS is an ES module loader that automatically loads each of the file for our application.
+* This way we don;t have to add script tags for every file we use in our application.
+*/
+/**
  * System configuration for Angular 2 samples
  * Adjust as necessary for your application needs.
  */
 (function (global) {
   System.config({
     paths: {
-      // paths serve as alias
+      // paths serve as alias to locate our system files
       'npm:': 'node_modules/'
     },
     // map tells the System loader where to look for things

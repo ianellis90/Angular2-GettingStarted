@@ -1,0 +1,14 @@
+//typescript configuration file which specifies typescript compile settings the typescript compiler tsc reads this. Place this file in the root of a typescript project.
+{
+  "compilerOptions": {
+    "target": "es5", //most of todays browsers only understand es5 version of JS so we tell tsc to transpile our typescript code into es5 code.
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true, //whether or not tsc should generate map files. These help with debugging so a good practice.
+    "emitDecoratorMetadata": true, //this needs to be set to be able to read our typescript class decorators.
+    "experimentalDecorators": true, //this needs to be set to be able to read our typescript class decorators.
+    "removeComments": false,
+    "noImplicitAny": true, //tsc will default untyped variables to type of any if it can't infed the type.
+    "suppressImplicitAnyIndexErrors": true
+  }
+}

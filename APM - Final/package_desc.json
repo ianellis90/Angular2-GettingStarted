@@ -1,0 +1,42 @@
+{
+    "name": "product-management",
+    "version": "1.0.0",
+    "author": "Deborah Kurata",
+    "description": "Package for the Acme Product Management sample application",
+    "scripts": { //we can run any of these scripts using npm run followed by the ID.
+        "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ", //run tsc and lite server at same time so when we make changes tsc will re-compile and lite server will reload changes.
+        "tsc": "tsc", //run tsc compiler
+        "tsc:w": "tsc -w", //run tsc compiler in watch mode/ This keeps compiler runing and monitoring for changes
+        "lint": "tslint ./app/**/*.ts -t verbose",
+        "lite": "lite-server", //lightweight static file server to run our application without any backend server. Specifically written for Angular2.
+        "typings": "typings", 
+        "postinstall": "typings install" //called by NPM automatically atfer it sucessfully completes the installation of the package.
+    },
+    "license": "ISC",
+    "dependencies": {
+        "@angular/common": "2.0.0",
+        "@angular/compiler": "2.0.0",
+        "@angular/core": "2.0.0",
+        "@angular/forms": "2.0.0",
+        "@angular/http": "2.0.0",
+        "@angular/platform-browser": "2.0.0",
+        "@angular/platform-browser-dynamic": "2.0.0",
+        "@angular/router": "3.0.0",
+        
+        "core-js": "^2.4.1",
+        "reflect-metadata": "^0.1.3",
+        "rxjs": "5.0.0-beta.12",
+        "systemjs": "0.19.27",
+        "zone.js": "^0.6.23",
+        
+        "bootstrap": "^3.3.6"
+    },
+    "devDependencies": {
+        "concurrently": "^2.2.0",
+        "lite-server": "^2.2.0",
+        "tslint": "^3.7.4",
+        "typescript": "^2.0.2",
+        "typings": "^1.0.4"
+    },
+    "repository": {}
+}
